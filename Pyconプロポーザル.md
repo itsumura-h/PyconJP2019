@@ -2,20 +2,22 @@
 2018年2月リリース！LaravelそっくりなウェブフレームワークMasonite
 
 ## Elevator Pitch:要約文(300字)
-新しいPython製のウェブフレームワークであるMasoniteは、Rails、・Laravelから強く影響を受けて、開発者向けに多くのコマンド操作や便利機能が組み込まれています。どういった機能があり、実際の開発ではどう使えるのか、紹介していきます。
+今までPythonのウェブフレームワークではMVC構造を持ったものはありませんでしたが、新しいPyhton製ウェブフレームワークであるMasoniteは、Rails・Laravelから強く影響を受けて、MVC構造を採用しました。また開発者向けに多くのコマンド操作や便利機能が組み込まれています。どういった機能があり、実際の開発ではどう使えるのか、紹介していきます。
 
 ## Description:イベント参加者にも公開される説明文
 ### MasoniteのMVC構造について(8分)
 MasoniteはMVCフレームワークであり、URLへアクセスした時から値が返るまで、どのようなファイルを通って、一連の処理がどのように行われるのか解説します。
 
 ### Masoniteが採用しているORMであるOratorについて(12分)
+```
 from app.models.User import User
 
 User.select('id', 'name') \
-.join('groups', 'users.group_id', 'groups.id') \
+.join('groups', 'users.group_id', '=','groups.id') \
 .where('age', '>', 20) \
 .where_null('updated_at') \
 .get()
+```
 
 Oratorはそれ単体でORMの機能を提供している外部ライブラリですが、Masoniteにデフォルトで組み込まれています。Oratorでのマイグレーションの仕組みと、クエリ発行するためにどのような書き方をするのか解説します。
 
